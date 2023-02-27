@@ -3,7 +3,7 @@
 	import Navbar from '../Navbar/Navbar.svelte';
 </script>
 
-<div class="flex items-center justify-center p-8 px-12">
+<div class="flex items-center justify-center py-8">
 	<div class="pr-40">
 		<Logo />
 	</div>
