@@ -4,6 +4,7 @@
 	import SvelteMarkdown from 'svelte-markdown';
 	import Paragraph from '../../../components/Post/Content/Paragraph/Paragraph.svelte';
 	import Heading from '../../../components/Post/Content/Heading/Heading.svelte';
+	import List from '../../../components/Post/Content/List/List.svelte';
 	/** @type {import('./$types').PageData} */
 	export let data: PageData;
 </script>
@@ -20,7 +21,8 @@
 					source={data.post.attributes.content}
 					renderers={{
 						paragraph: Paragraph,
-						heading: Heading
+						heading: Heading,
+						list: List
 					}}
 				/>
 			</div>
