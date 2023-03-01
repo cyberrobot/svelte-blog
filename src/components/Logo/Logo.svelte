@@ -2,9 +2,9 @@
 
 <style>
 	.logo {
-		background: url('/images/logo-v3.svg') no-repeat center center;
+		background: url('/images/logo.svg') no-repeat center center;
 		background-size: contain;
-		width: 120px;
-		height: 59px;
+		width: 244px;
+		height: 60px;
 	}
 </style>
