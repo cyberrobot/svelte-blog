@@ -5,13 +5,14 @@
 	import Paragraph from '../../../components/Post/Content/Paragraph/Paragraph.svelte';
 	import Heading from '../../../components/Post/Content/Heading/Heading.svelte';
 	import List from '../../../components/Post/Content/List/List.svelte';
+	import Aside from '../../../components/Aside/Aside.svelte';
 	/** @type {import('./$types').PageData} */
 	export let data: PageData;
 </script>
 
 <div class="container mx-auto px-4 lg:px-14">
 	<Header />
-	<div class="my-10 grid grid-cols-6 gap-3">
+	<div class="my-10 grid grid-cols-6 gap-16">
 		<div class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
 			<h1 class="mb-10 text-center font-heading text-4xl font-black text-black">
 				{data.post.attributes.title}
@@ -27,6 +28,7 @@
 				/>
 			</div>
 		</div>
+		<Aside aboutMe={data.bio} />
 	</div>
 </div>
 
