@@ -5,6 +5,7 @@
 	import Paragraph from '../../../components/Post/Content/Paragraph/Paragraph.svelte';
 	import Heading from '../../../components/Post/Content/Heading/Heading.svelte';
 	import List from '../../../components/Post/Content/List/List.svelte';
+	import Link from '../../../components/Post/Content/Link/Link.svelte';
 	import Aside from '../../../components/Aside/Aside.svelte';
 	/** @type {import('./$types').PageData} */
 	export let data: PageData;
@@ -23,7 +24,8 @@
 					renderers={{
 						paragraph: Paragraph,
 						heading: Heading,
-						list: List
+						list: List,
+						link: Link
 					}}
 				/>
 			</div>

@@ -14,7 +14,8 @@ module.exports = {
 			{
 				light: {
 					...require('daisyui/src/colors/themes')['[data-theme=bumblebee]'],
-					'base-100': '#fff5cf'
+					'base-100': '#fff5cf',
+					'base-content': '#000'
 				}
 			}
 		]
