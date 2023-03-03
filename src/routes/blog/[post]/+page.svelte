@@ -7,7 +7,7 @@
 	import List from '../../../components/Post/Content/List/List.svelte';
 	import Link from '../../../components/Post/Content/Link/Link.svelte';
 	import Aside from '../../../components/Aside/Aside.svelte';
-	/** @type {import('./$types').PageData} */
+	import Code from '../../../components/Post/Content/Code/Code.svelte';
 	export let data: PageData;
 </script>
 
@@ -25,7 +25,8 @@
 						paragraph: Paragraph,
 						heading: Heading,
 						list: List,
-						link: Link
+						link: Link,
+						code: Code
 					}}
 				/>
 			</div>
@@ -33,6 +34,3 @@
 		<Aside aboutMe={data.bio} />
 	</div>
 </div>
-
-<style>
-</style>
