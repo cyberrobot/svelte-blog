@@ -46,7 +46,7 @@
 		text-transform: uppercase;
 		font-weight: 900;
 		font-size: 18px;
-		@layer heading;
+		@apply font-heading;
 	}
 
 	.navbar .menu li a:hover {

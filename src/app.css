@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	@apply font-body text-lg leading-6;
+}
+
 .widget {
 	@apply border-4 border-b-[10px] border-solid border-black bg-white;
 }

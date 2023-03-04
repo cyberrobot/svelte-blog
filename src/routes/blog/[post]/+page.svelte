@@ -8,8 +8,14 @@
 	import Link from '../../../components/Post/Content/Link/Link.svelte';
 	import Aside from '../../../components/Aside/Aside.svelte';
 	import Code from '../../../components/Post/Content/Code/Code.svelte';
-	export let data: PageData;
+	import type { Post } from '$lib/types';
+	import highlightTheme from 'svelte-highlight/styles/lioshi';
+	export let data: PageData & { post: Post };
 </script>
+
+<svelte:head>
+	{@html highlightTheme}
+</svelte:head>
 
 <div class="container mx-auto px-4 lg:px-14">
 	<Header />
@@ -18,6 +24,7 @@
 			<h1 class="mb-10 text-center font-heading text-4xl font-black text-black">
 				{data.post.attributes.title}
 			</h1>
+			<div class="mb-10 rounded-lg bg-base-100 p-6">{data.post.attributes.description}</div>
 			<div class="mt-4">
 				<SvelteMarkdown
 					source={data.post.attributes.content}
