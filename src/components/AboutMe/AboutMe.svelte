@@ -7,9 +7,9 @@
 	export let content: string = '';
 </script>
 
-<div class="about-me widget rounded-[40px] px-10 pb-2">
+<div class="about-me widget rounded-[40px] px-10 pb-10 text-center">
 	<div
-		class="mx-10 mb-8 h-10 rounded-b-3xl bg-black text-center font-heading text-sm uppercase leading-10 text-white"
+		class="mx-10 mb-8 h-10 rounded-b-3xl bg-black  font-heading text-sm uppercase leading-10 text-white"
 	>
 		About me
 	</div>
@@ -18,12 +18,10 @@
 	>
 		<img src={thumbnail} alt="thumbnail" class="h-full w-full" />
 	</div>
-	<div class="name mb-6 text-center font-heading text-2xl font-black text-black">{name}</div>
-	<div class="text-center">
+	<div class="name mb-6 font-heading text-2xl font-black text-black">{name}</div>
+	<div>
 		{#if description}
-			<Paragraph>
-				{description}
-			</Paragraph>
+			{description}
 		{/if}
 		{#if content}
 			<div>

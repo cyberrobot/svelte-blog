@@ -3,9 +3,11 @@
 	import Navbar from '../Navbar/Navbar.svelte';
 </script>
 
-<div class="flex items-center justify-center py-8">
+<div class="flex items-center py-8">
 	<div class="pr-40">
-		<Logo />
+		<a href="/">
+			<Logo />
+		</a>
 	</div>
 	<Navbar />
 </div>

@@ -2,8 +2,7 @@
 
 <style>
 	.logo {
-		background: url('/images/logo.svg') no-repeat center center;
-		background-size: contain;
+		background: url('/images/logo.svg');
 		width: 316px;
 		height: 60px;
 	}
