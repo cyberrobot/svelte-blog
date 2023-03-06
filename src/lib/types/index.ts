@@ -4,6 +4,9 @@ export type Post = {
 		title: string;
 		description: string;
 		content: string;
+		thumbnail: Thumbnail;
+		alternativeText: string;
+		featured_image: Thumbnail;
 		createdAt: string;
 		updatedAt: string;
 		publishedAt: string;
