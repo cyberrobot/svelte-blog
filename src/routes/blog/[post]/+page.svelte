@@ -19,9 +19,9 @@
 
 <div class="container mx-auto px-4 lg:px-14">
 	<Header />
-	<div class="my-10 grid grid-cols-6 gap-16">
+	<div class="mb-10 grid grid-cols-6 gap-16">
 		<div class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
-			<h1 class="mb-10 text-center font-heading text-4xl font-black text-black">
+			<h1 class="mb-10 text-center font-heading text-2xl font-extrabold text-black md:text-4xl">
 				{data.post.attributes.title}
 			</h1>
 			<div class="mb-10 rounded-lg bg-base-100 p-6">{data.post.attributes.description}</div>
