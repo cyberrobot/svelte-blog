@@ -1,9 +1,9 @@
 <script lang="ts">
 	import AboutMe from '../AboutMe/AboutMe.svelte';
 	import type { Bio } from '$lib/types';
+	import { config } from '$lib/config';
 	export let aboutMe: Bio;
-	const thumbnailWithHost =
-		'http://127.0.0.1:1337' + aboutMe.attributes.thumbnail.data.attributes.url;
+	const thumbnailWithHost = config.apiHost + aboutMe.attributes.thumbnail.data.attributes.url;
 </script>
 
 <aside class="sidebar col-span-6 lg:col-span-2">
