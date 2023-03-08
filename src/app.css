@@ -9,3 +9,15 @@ html {
 .widget {
 	@apply border-4 border-b-[10px] border-solid border-black bg-white;
 }
+
+.btn {
+	@apply rounded-2xl;
+}
+
+.btn-primary {
+	@apply bg-btn-primary border-4 border-solid border-black font-bold;
+}
+
+.btn-primary:hover {
+	@apply border-4 border-solid border-black bg-white;
+}

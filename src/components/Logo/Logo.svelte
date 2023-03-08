@@ -1,4 +1,4 @@
-<div class="logo h-[46px] w-[240px] md:h-[60px] md:w-[316px]" />
+<div class="logo h-[46px] w-[240px] lg:h-[60px] lg:w-[316px]" />
 
 <style>
 	.logo {

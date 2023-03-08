@@ -6,6 +6,9 @@ module.exports = {
 			fontFamily: {
 				heading: ['Montserrat', 'sans-serif'],
 				body: ['Work sans', 'sans-serif']
+			},
+			colors: {
+				'btn-primary': '#FFCC01'
 			}
 		}
 	},
