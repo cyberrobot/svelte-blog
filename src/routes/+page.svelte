@@ -5,7 +5,7 @@
 	export let data: PageData & { posts: Post[] };
 </script>
 
-<div class="mb-10 grid grid-cols-6 gap-14">
+<div class="mb-2 grid grid-cols-6 gap-14">
 	{#each data.posts as post}
 		<div class="col-span-6 md:col-span-3 lg:col-span-2">
 			<div class="widget rounded-[40px] p-6 text-center">

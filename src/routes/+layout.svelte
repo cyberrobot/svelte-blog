@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import Footer from '../components/Footer/Footer.svelte';
 	import Header from '../components/Header/Header.svelte';
 	import Logo from '../components/Logo/Logo.svelte';
 	import Navbar from '../components/Navbar/Navbar.svelte';
@@ -11,6 +12,7 @@
 		<div class="container mx-auto px-4 lg:px-14">
 			<Header />
 			<slot />
+			<Footer />
 		</div>
 	</div>
 	<div class="drawer-side">

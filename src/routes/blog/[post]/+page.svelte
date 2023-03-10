@@ -16,7 +16,7 @@
 	{@html highlightTheme}
 </svelte:head>
 
-<div class="mb-10 grid grid-cols-6 gap-16">
+<div class="mb-2 grid grid-cols-6 gap-16">
 	<div class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
 		<h1 class="mb-10 text-center font-heading text-2xl font-extrabold text-black md:text-4xl">
 			{data.post.attributes.title}
