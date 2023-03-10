@@ -9,12 +9,15 @@
 	import Code from '../../../components/Post/Content/Code/Code.svelte';
 	import type { Post } from '$lib/types';
 	import highlightTheme from 'svelte-highlight/styles/lioshi';
+	import { MetaTags } from 'svelte-meta-tags';
 	export let data: PageData & { post: Post };
 </script>
 
 <svelte:head>
 	{@html highlightTheme}
 </svelte:head>
+
+<MetaTags title={data.post.attributes.title} />
 
 <div class="mb-2 grid grid-cols-6 gap-16">
 	<div class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
