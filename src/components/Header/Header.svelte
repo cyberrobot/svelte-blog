@@ -3,7 +3,7 @@
 	import Navbar from '../Navbar/Navbar.svelte';
 </script>
 
-<div class="mb-0 flex items-center justify-between py-6 md:mb-4 md:py-8">
+<header class="mb-0 flex items-center justify-between py-6 md:mb-4 md:py-8">
 	<a class="flex-1" href="/">
 		<Logo />
 	</a>
@@ -26,4 +26,4 @@
 			>
 		</label>
 	</div>
-</div>
+</header>

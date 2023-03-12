@@ -2,13 +2,13 @@
 	export let direction = 'horizontal';
 </script>
 
-<div class={direction === 'horizontal' ? 'navbar' : ''}>
+<nav class={direction === 'horizontal' ? 'navbar' : ''}>
 	<ul class="menu {direction === 'horizontal' ? 'menu-horizontal' : ''} -mx-4">
 		<li><a href="/">Blog</a></li>
 		<li><a href="/work-with-me">Work with me</a></li>
 		<li><a href="/contact">Contact</a></li>
 	</ul>
-</div>
+</nav>
 
 <style>
 	.navbar .menu li a {
