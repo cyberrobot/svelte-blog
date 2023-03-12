@@ -2,6 +2,7 @@ export type Post = {
 	id: number;
 	attributes: {
 		title: string;
+		slug: string;
 		description: string;
 		content: string;
 		thumbnail: Thumbnail;

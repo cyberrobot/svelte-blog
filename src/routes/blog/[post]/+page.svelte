@@ -9,25 +9,46 @@
 	import Code from '../../../components/Post/Content/Code/Code.svelte';
 	import type { Post } from '$lib/types';
 	import highlightTheme from 'svelte-highlight/styles/lioshi';
-	import { MetaTags } from 'svelte-meta-tags';
-	export let data: PageData & { post: Post };
+	import { MetaTags, JsonLd } from 'svelte-meta-tags';
+	import { config } from '$lib/config';
+	export let data: PageData & { post: Post[] };
+	const post: Post = data.post[0];
 </script>
 
 <svelte:head>
 	{@html highlightTheme}
 </svelte:head>
 
-<MetaTags title={data.post.attributes.title} />
+<MetaTags title={post.attributes.title} description={post.attributes.description} />
+
+<JsonLd
+	schema={{
+		'@type': 'Article',
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': `${config.clientHost}/blog/${post.attributes.slug}`
+		},
+		image: [`${config.apiHost}${post.attributes.thumbnail.data.attributes.url}`],
+		headline: post.attributes.title,
+		description: post.attributes.description,
+		datePublished: post.attributes.publishedAt,
+		dateModified: post.attributes.updatedAt,
+		author: {
+			'@type': 'Person',
+			name: data.bio.attributes.name
+		}
+	}}
+/>
 
 <div class="mb-2 grid grid-cols-6 gap-16">
 	<div class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
 		<h1 class="mb-10 text-center font-heading text-2xl font-extrabold text-black md:text-4xl">
-			{data.post.attributes.title}
+			{post.attributes.title}
 		</h1>
-		<div class="mb-10 rounded-lg bg-base-100 p-6">{data.post.attributes.description}</div>
+		<div class="mb-10 rounded-lg bg-base-100 p-6">{post.attributes.description}</div>
 		<div class="mt-4">
 			<SvelteMarkdown
-				source={data.post.attributes.content}
+				source={post.attributes.content}
 				renderers={{
 					paragraph: Paragraph,
 					heading: Heading,

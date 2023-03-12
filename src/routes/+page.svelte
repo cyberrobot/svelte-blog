@@ -9,7 +9,7 @@
 	{#each data.posts as post}
 		<div class="col-span-6 md:col-span-3 lg:col-span-2">
 			<div class="widget rounded-[40px] p-6 text-center">
-				<a href="/blog/{post.id}">
+				<a href="/blog/{post.attributes.slug}">
 					<figure class="mb-4 overflow-hidden rounded-[40px]">
 						<img
 							class="h-full w-full"
@@ -18,7 +18,7 @@
 						/>
 					</figure>
 				</a>
-				<a class="hover:animate-pulse" href="/blog/{post.id}">
+				<a class="hover:animate-pulse" href="/blog/{post.attributes.slug}">
 					<h3 class="mb-4 font-heading text-2xl font-extrabold md:text-3xl">
 						{post.attributes.title}
 					</h3>
@@ -26,7 +26,7 @@
 				<div class="mb-4">
 					{post.attributes.description}
 				</div>
-				<a href="/blog/{post.id}" class="btn-primary btn-sm btn">Read more</a>
+				<a href="/blog/{post.attributes.slug}" class="btn-primary btn-sm btn">Read more</a>
 			</div>
 		</div>
 	{/each}
