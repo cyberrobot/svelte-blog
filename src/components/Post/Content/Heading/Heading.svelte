@@ -4,9 +4,9 @@
 </script>
 
 {#if depth === 1}
-	<h1 class="mb-8 font-heading text-3xl font-medium text-black"><slot /></h1>
+	<h1 class="mb-8 font-heading text-xl font-medium text-black md:text-3xl"><slot /></h1>
 {:else if depth === 2}
-	<h2 class="mb-8 font-heading text-3xl font-medium text-black"><slot /></h2>
+	<h2 class="mb-8 font-heading text-xl font-medium text-black md:text-3xl"><slot /></h2>
 {:else if depth === 3}
 	<h3 class="text-md mb-8 font-heading font-medium text-black"><slot /></h3>
 {:else if depth === 4}

@@ -4,4 +4,6 @@
 	export let text: string;
 </script>
 
-<div class="mb-10"><HighlightAuto {...lang && { language: lang }} code={text} /></div>
+<div class="mb-10 max-h-[400px] overflow-auto rounded-md">
+	<HighlightAuto {...lang && { language: lang }} code={text} />
+</div>
