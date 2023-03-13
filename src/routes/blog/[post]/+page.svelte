@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import SvelteMarkdown from 'svelte-markdown';
-	import Paragraph from '../../../components/Post/Content/Paragraph/Paragraph.svelte';
-	import Heading from '../../../components/Post/Content/Heading/Heading.svelte';
-	import List from '../../../components/Post/Content/List/List.svelte';
-	import Link from '../../../components/Post/Content/Link/Link.svelte';
-	import Aside from '../../../components/Aside/Aside.svelte';
-	import Code from '../../../components/Post/Content/Code/Code.svelte';
+	import Paragraph from '$lib/components/Post/Content/Paragraph/Paragraph.svelte';
+	import Heading from '$lib/components/Post/Content/Heading/Heading.svelte';
+	import List from '$lib/components/Post/Content/List/List.svelte';
+	import Link from '$lib/components/Post/Content/Link/Link.svelte';
+	import Aside from '$lib/components/Aside/Aside.svelte';
+	import Code from '$lib/components/Post/Content/Code/Code.svelte';
 	import type { Post } from '$lib/types';
 	import highlightTheme from 'svelte-highlight/styles/lioshi';
 	import { MetaTags, JsonLd } from 'svelte-meta-tags';

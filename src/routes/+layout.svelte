@@ -1,9 +1,9 @@
 <script>
 	import '../app.css';
-	import Footer from '../components/Footer/Footer.svelte';
-	import Header from '../components/Header/Header.svelte';
-	import Logo from '../components/Logo/Logo.svelte';
-	import Navbar from '../components/Navbar/Navbar.svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
+	import Header from '$lib/components/Header/Header.svelte';
+	import Logo from '$lib/components/Logo/Logo.svelte';
+	import Navbar from '$lib/components/Navbar/Navbar.svelte';
 </script>
 
 <div class="drawer">
