@@ -23,7 +23,7 @@
 						{post.attributes.title}
 					</h3>
 				</a>
-				<div class="mb-4">
+				<div class="mb-4 text-lg">
 					{post.attributes.description}
 				</div>
 				<a href="/blog/{post.attributes.slug}" class="btn-primary btn-sm btn">Read more</a>

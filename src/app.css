@@ -1,13 +1,21 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 html {
-	@apply font-body text-lg leading-6;
+	@apply font-body leading-6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
 }
 
 .widget {
 	@apply border-4 border-b-[10px] border-solid border-black bg-white;
+}
+
+@tailwind components;
+
+.all-prose {
+	@apply prose-lg prose-img:rounded-lg prose-a:transition prose-a:text-primary hover:prose-a:text-primary-focus prose-headings:scroll-mt-16 prose-headings:font-medium prose;
 }
 
 .btn {
@@ -15,9 +23,11 @@ html {
 }
 
 .btn-primary {
-	@apply bg-btn-primary border-4 border-solid border-black font-bold;
+	@apply border-4 border-solid border-black bg-btn-primary font-bold;
 }
 
 .btn-primary:hover {
 	@apply border-4 border-solid border-black bg-white;
 }
+
+@tailwind utilities;

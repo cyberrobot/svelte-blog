@@ -1,6 +1,4 @@
 <script lang="ts">
-	import SvelteMarkdown from 'svelte-markdown';
-	import Paragraph from '../Post/Content/Paragraph/Paragraph.svelte';
 	export let thumbnail: string;
 	export let name: string;
 	export let description: string = '';
@@ -19,19 +17,12 @@
 		<img src={thumbnail} alt="thumbnail" class="h-full w-full" />
 	</div>
 	<div class="name mb-6 font-heading text-2xl font-black text-black">{name}</div>
-	<div>
+	<div class="text-lg leading-9">
 		{#if description}
 			{description}
 		{/if}
 		{#if content}
-			<div>
-				<SvelteMarkdown
-					source={content}
-					renderers={{
-						paragraph: Paragraph
-					}}
-				/>
-			</div>
+			{content}
 		{/if}
 	</div>
 </div>

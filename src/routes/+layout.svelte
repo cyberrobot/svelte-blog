@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import '../prism.css';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Header from '$lib/components/Header/Header.svelte';
 	import Logo from '$lib/components/Logo/Logo.svelte';
