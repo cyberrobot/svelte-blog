@@ -7,7 +7,7 @@
 	<a class="flex-1" href="/">
 		<Logo />
 	</a>
-	<div class="flex-2 hidden lg:block">
+	<!-- <div class="flex-2 hidden lg:block">
 		<Navbar />
 	</div>
 	<div class="flex-2 lg:hidden">
@@ -25,5 +25,5 @@
 				/></svg
 			>
 		</label>
-	</div>
+	</div> -->
 </header>
