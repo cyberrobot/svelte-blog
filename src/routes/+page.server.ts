@@ -1,11 +1,12 @@
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { config } from '$lib/config';
 
 export const load = (async ({ fetch }) => {
 	const postsRes = await fetch(
 		`${config.apiUrl}/posts?populate[thumbnail][fields][0]=url&populate[thumbnail][fields][1]=alternativeText`
 	);
+
 	const postsData = await postsRes.json();
 
 	if (postsData) {
@@ -13,6 +14,5 @@ export const load = (async ({ fetch }) => {
 			posts: postsData.data
 		};
 	}
-
 	throw error(404, 'Not found');
-}) satisfies PageLoad;
+}) satisfies PageServerLoad;

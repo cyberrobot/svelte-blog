@@ -1,16 +1,25 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import '../prism.css';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Header from '$lib/components/Header/Header.svelte';
 	import Logo from '$lib/components/Logo/Logo.svelte';
 	import Navbar from '$lib/components/Navbar/Navbar.svelte';
+	import { afterNavigate } from "$app/navigation";
+  
+  let container: HTMLElement;
+
+  afterNavigate(() => {
+    if (container) { 
+      container.scrollIntoView();
+    }
+  });
 </script>
 
 <div class="drawer">
 	<input id="mobile-side-nav" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
-		<div class="container mx-auto px-4 lg:px-14">
+		<div class="container mx-auto px-4 lg:px-14" bind:this={container}>
 			<Header />
 			<slot />
 			<Footer />
