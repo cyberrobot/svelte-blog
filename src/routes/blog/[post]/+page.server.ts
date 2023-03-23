@@ -4,9 +4,11 @@ import { compile } from 'mdsvex';
 
 export const load = (async ({ fetch, params }) => {
 	const postRes = await fetch(
-	`${config.apiUrl}/posts/?filters[slug][$eq]=${params.post}&?populate[thumbnail][fields][0]=url&populate[thumbnail][fields]`
+		`${config.apiUrl}/posts/?filters[slug][$eq]=${params.post}&populate[thumbnail][fields][0]=name&populate[thumbnail][fields][1]=alternativeText&populate[thumbnail][fields][2]=hash&populate[thumbnail][fields][3]=ext`
 	);
-	const bioRes = await fetch(`${config.apiUrl}/bio?populate[thumbnail][fields][0]=url`);
+	const bioRes = await fetch(
+		`${config.apiUrl}/bio?populate[thumbnail][fields][0]=name&populate[thumbnail][fields][1]=alternativeText&populate[thumbnail][fields][2]=hash&populate[thumbnail][fields][3]=ext`
+	);
 	try {
 		const postData = await postRes.json();
 		const bioData = await bioRes.json();
@@ -32,8 +34,8 @@ export const load = (async ({ fetch, params }) => {
 		}
 	} catch (error) {
 		return {
-      status: 404,
-      error,
-    }
+			status: 404,
+			error
+		};
 	}
 }) satisfies PageServerLoad;

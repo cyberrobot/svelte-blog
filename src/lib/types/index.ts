@@ -18,7 +18,10 @@ type Thumbnail = {
 	data: {
 		id: number;
 		attributes: {
-			url: string;
+			name: string;
+      hash: string;
+      ext: string;
+      alternativeText: string;
 		};
 	};
 };

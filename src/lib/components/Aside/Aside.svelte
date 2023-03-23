@@ -1,15 +1,16 @@
 <script lang="ts">
 	import AboutMe from '../AboutMe/AboutMe.svelte';
 	import type { Bio } from '$lib/types';
-	import { config } from '$lib/config';
+	import { getIsomorphicImageSource } from '$lib/utils/images/getIsomorphicImageSource';
 	export let aboutMe: Bio;
-	const thumbnailWithHost = config.apiHost + aboutMe.attributes.thumbnail.data.attributes.url;
 </script>
 
 <aside class="sidebar col-span-6 lg:col-span-2">
-	<AboutMe
-		thumbnail={thumbnailWithHost}
-		name={aboutMe.attributes.name}
-		description={aboutMe.attributes.description}
-	/>
+	{#await getIsomorphicImageSource({hash: aboutMe.attributes.thumbnail.data.attributes.hash, ext: aboutMe.attributes.thumbnail.data.attributes.ext}) then src}
+		<AboutMe
+			thumbnail={src}
+			name={aboutMe.attributes.name}
+			description={aboutMe.attributes.description}
+		/>
+	{/await}
 </aside>

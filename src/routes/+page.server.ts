@@ -4,7 +4,7 @@ import { config } from '$lib/config';
 
 export const load = (async ({ fetch }) => {
 	const postsRes = await fetch(
-		`${config.apiUrl}/posts?populate[thumbnail][fields][0]=url&populate[thumbnail][fields][1]=alternativeText`
+		`${config.apiUrl}/posts?populate[thumbnail][fields][0]=name&populate[thumbnail][fields][1]=alternativeText&populate[thumbnail][fields][2]=hash&populate[thumbnail][fields][3]=ext`
 	);
 
 	const postsData = await postsRes.json();

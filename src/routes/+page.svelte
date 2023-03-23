@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { Post } from '$lib/types';
-	import { config } from '$lib/config';
+	import { getIsomorphicImageSource } from '$lib/utils/images/getIsomorphicImageSource';
 	export let data: PageData & { posts: Post[] };
 </script>
 
@@ -11,11 +11,13 @@
 			<div class="widget rounded-[40px] p-6 text-center">
 				<a href="/blog/{post.attributes.slug}">
 					<figure class="mb-4 overflow-hidden rounded-[40px]">
-						<img
-							class="h-full w-full"
-							src={`${config.apiHost}${post.attributes.thumbnail.data.attributes.url}`}
-							alt={post.attributes.thumbnail.data.attributes.alternativeText}
-						/>
+						{#await getIsomorphicImageSource({hash: post.attributes.thumbnail.data.attributes.hash, ext: post.attributes.thumbnail.data.attributes.ext}) then src}
+							<img
+								class="h-full w-full"
+								src={src}
+								alt={post.attributes.thumbnail.data.attributes.alternativeText}
+							/>
+						{/await}
 					</figure>
 				</a>
 				<a class="hover:animate-pulse" href="/blog/{post.attributes.slug}">

@@ -9,7 +9,6 @@ export const GET = (async ({ params }) => {
 			}
 		});
 		const data = await res.json();
-		console.log('data', data);
 
 		if (data) {
 			return new Response(String(data));
