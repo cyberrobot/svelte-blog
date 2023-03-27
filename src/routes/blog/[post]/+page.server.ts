@@ -1,5 +1,6 @@
 import { config } from '$lib/config';
 import type { PageServerLoad } from './$types';
+import { error } from '@sveltejs/kit';
 import { compile } from 'mdsvex';
 
 export const load = (async ({ fetch, params }) => {
@@ -9,33 +10,30 @@ export const load = (async ({ fetch, params }) => {
 	const bioRes = await fetch(
 		`${config.apiUrl}/bio?populate[thumbnail][fields][0]=name&populate[thumbnail][fields][1]=alternativeText&populate[thumbnail][fields][2]=hash&populate[thumbnail][fields][3]=ext`
 	);
-	try {
-		const postData = await postRes.json();
-		const bioData = await bioRes.json();
+
+	const postData = await postRes.json();
+	const bioData = await bioRes.json();
+	if (postData && bioData) {
 		const compiledPostContent = (await compile(postData.data[0].attributes.content))?.code;
 		const compiledBioContent = (await compile(bioData.data.attributes.content))?.code;
-		if (postData && bioData && compiledPostContent && compiledBioContent) {
-			return {
-				post: {
-					...postData.data[0],
-					attributes: {
-						...postData.data[0].attributes,
-						content: compiledPostContent
-					}
-				},
-				bio: {
-					...bioData.data,
-					attributes: {
-						...bioData.data.attributes,
-						content: compiledBioContent
-					}
-				}
-			};
-		}
-	} catch (error) {
+		console.log('compiledPostContent', compiledPostContent);
+		console.log('compiledBioContent', compiledBioContent);
 		return {
-			status: 404,
-			error
+			post: {
+				...postData.data[0],
+				attributes: {
+					...postData.data[0].attributes,
+					content: compiledPostContent
+				}
+			},
+			bio: {
+				...bioData.data,
+				attributes: {
+					...bioData.data.attributes,
+					content: compiledBioContent
+				}
+			}
 		};
 	}
+	throw error(404, 'Not found');
 }) satisfies PageServerLoad;
