@@ -2,10 +2,11 @@
 	import type { PageData } from './$types';
 	import Aside from '$lib/components/Aside/Aside.svelte';
 	import type { Post } from '$lib/types';
-	import { escapeHtml } from '$lib/utils/escapeHtml/escapeHtml';
+	import SvelteMarkdown from 'svelte-markdown';
 	import { MetaTags, JsonLd } from 'svelte-meta-tags';
 	import { getIsomorphicImageSource } from '$lib/utils/images/getIsomorphicImageSource';
 	import { config } from '$lib/config';
+	import Code from '$lib/components/Code/Code.svelte';
 	export let data: PageData;
 	$: post = data.post as Post;
 </script>
@@ -42,7 +43,12 @@
 			{post.attributes.description}
 		</div>
 		<div class="all-prose mx-auto mt-4">
-			{@html escapeHtml(post.attributes.content)}
+			<SvelteMarkdown
+				renderers={{
+					code: Code
+				}}
+				source={post.attributes.content}
+			/>
 		</div>
 	</article>
 	<Aside aboutMe={data.bio} />

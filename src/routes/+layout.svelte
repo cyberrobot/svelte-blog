@@ -5,15 +5,15 @@
 	import Header from '$lib/components/Header/Header.svelte';
 	import Logo from '$lib/components/Logo/Logo.svelte';
 	import Navbar from '$lib/components/Navbar/Navbar.svelte';
-	import { afterNavigate } from "$app/navigation";
-  
-  let container: HTMLElement;
+	import { afterNavigate } from '$app/navigation';
 
-  afterNavigate(() => {
-    if (container) { 
-      container.scrollIntoView();
-    }
-  });
+	let container: HTMLElement;
+
+	afterNavigate(() => {
+		if (container) {
+			container.scrollIntoView();
+		}
+	});
 </script>
 
 <div class="drawer">

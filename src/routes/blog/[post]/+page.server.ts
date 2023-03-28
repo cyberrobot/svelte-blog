@@ -1,7 +1,6 @@
 import { config } from '$lib/config';
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { compile } from 'mdsvex';
 
 export const load = (async ({ fetch, params }) => {
 	const postRes = await fetch(
@@ -14,25 +13,9 @@ export const load = (async ({ fetch, params }) => {
 	const postData = await postRes.json();
 	const bioData = await bioRes.json();
 	if (postData && bioData) {
-		const compiledPostContent = (await compile(postData.data[0].attributes.content))?.code;
-		const compiledBioContent = (await compile(bioData.data.attributes.content))?.code;
-		console.log('compiledPostContent', compiledPostContent);
-		console.log('compiledBioContent', compiledBioContent);
 		return {
-			post: {
-				...postData.data[0],
-				attributes: {
-					...postData.data[0].attributes,
-					content: compiledPostContent
-				}
-			},
-			bio: {
-				...bioData.data,
-				attributes: {
-					...bioData.data.attributes,
-					content: compiledBioContent
-				}
-			}
+			post: postData.data[0],
+			bio: bioData.data
 		};
 	}
 	throw error(404, 'Not found');
