@@ -5,7 +5,7 @@
 	export let content: string = '';
 </script>
 
-<div class="about-me widget rounded-[40px] px-10 pb-10 text-center">
+<div class="about-me widget rounded-[40px] px-4 pb-8 text-center md:px-10 md:pb-10">
 	<div
 		class="mx-10 mb-8 h-10 rounded-b-3xl bg-black  font-heading text-sm uppercase leading-10 text-white"
 	>

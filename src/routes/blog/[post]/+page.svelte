@@ -35,8 +35,10 @@
 {/await}
 
 <div class="mb-2 grid grid-cols-6 gap-16">
-	<article class="post-content widget col-span-6 rounded-[40px] p-10 lg:col-span-4">
-		<h1 class="mb-10 text-center font-heading text-2xl font-extrabold text-black md:text-4xl">
+	<article class="post-content widget col-span-6 rounded-[40px] px-4 py-8 md:p-10 lg:col-span-4">
+		<h1
+			class="mb-8 text-center font-heading text-2xl font-extrabold text-black md:mb-10 md:text-4xl"
+		>
 			{post.attributes.title}
 		</h1>
 		<div class="mx-auto mb-10 max-w-[65ch] rounded-lg bg-base-100 p-6 text-lg">
