@@ -7,6 +7,7 @@
 	import { getIsomorphicImageSource } from '$lib/utils/images/getIsomorphicImageSource';
 	import { config } from '$lib/config';
 	import Code from '$lib/components/Code/Code.svelte';
+	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
 	export let data: PageData;
 	$: post = data.post as Post;
 </script>
@@ -36,21 +37,24 @@
 
 <div class="mb-2 grid grid-cols-6 gap-16">
 	<article class="post-content widget col-span-6 rounded-[40px] px-4 py-8 md:p-10 lg:col-span-4">
-		<h1
-			class="mb-8 text-center font-heading text-2xl font-extrabold text-black md:mb-10 md:text-4xl"
-		>
-			{post.attributes.title}
-		</h1>
-		<div class="mx-auto mb-10 max-w-[65ch] rounded-lg bg-base-100 p-6 text-lg">
-			{post.attributes.description}
-		</div>
-		<div class="all-prose mx-auto mt-4">
-			<SvelteMarkdown
-				renderers={{
-					code: Code
-				}}
-				source={post.attributes.content}
-			/>
+		<div class="all-prose mx-auto">
+			<h1 class="mb-8 font-heading text-2xl font-extrabold text-black md:mb-4 md:text-4xl">
+				{post.attributes.title}
+			</h1>
+			<div class="mb-4">
+				<PublishedDate date={post.attributes.publishedAt} />
+			</div>
+			<div class="mb-10 rounded-lg bg-base-100 p-6">
+				{post.attributes.description}
+			</div>
+			<div class="mt-4">
+				<SvelteMarkdown
+					renderers={{
+						code: Code
+					}}
+					source={post.attributes.content}
+				/>
+			</div>
 		</div>
 	</article>
 	<Aside aboutMe={data.bio} />
