@@ -8,6 +8,7 @@
 	import { config } from '$lib/config';
 	import Code from '$lib/components/Code/Code.svelte';
 	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
+	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
 	export let data: PageData;
 	$: post = data.post as Post;
 </script>
@@ -43,6 +44,8 @@
 			</h1>
 			<div class="mb-4">
 				<PublishedDate date={post.attributes.publishedAt} />
+				<span class="text-gray-500">•</span>
+				<TimeToRead content={post.attributes.content} />
 			</div>
 			<div class="mb-10 rounded-lg bg-base-100 p-6">
 				{post.attributes.description}
