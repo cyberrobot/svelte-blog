@@ -9,7 +9,9 @@
 	import Code from '$lib/components/Code/Code.svelte';
 	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
 	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
+	import Tags from '$lib/components/Tags/Tags.svelte';
 	export let data: PageData;
+	console.log('post.attributes.tags', data.post.attributes.tags);
 	$: post = data.post as Post;
 </script>
 
@@ -39,13 +41,16 @@
 <div class="mb-2 grid grid-cols-6 gap-16">
 	<article class="post-content widget col-span-6 rounded-[40px] px-4 py-8 md:p-10 lg:col-span-4">
 		<div class="all-prose mx-auto">
-			<h1 class="mb-8 font-heading text-2xl font-extrabold text-black md:mb-4 md:text-4xl">
+			<h1 class="mb-2 font-heading text-2xl font-extrabold text-black md:text-4xl">
 				{post.attributes.title}
 			</h1>
-			<div class="mb-4">
+			<div class="mb-2">
 				<PublishedDate date={post.attributes.publishedAt} />
 				<span class="text-gray-500">•</span>
 				<TimeToRead content={post.attributes.content} />
+			</div>
+			<div class="mb-4">
+				<Tags tags={post.attributes.tags?.data.map((t) => t.attributes.name)} />
 			</div>
 			<div class="mb-10 rounded-lg bg-base-100 p-6">
 				{post.attributes.description}

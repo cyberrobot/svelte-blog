@@ -6,8 +6,8 @@ export type Post = {
 		description: string;
 		content: string;
 		thumbnail: Thumbnail;
-		alternativeText: string;
 		featured_image: Thumbnail;
+		tags: Tags;
 		createdAt: string;
 		updatedAt: string;
 		publishedAt: string;
@@ -19,11 +19,20 @@ type Thumbnail = {
 		id: number;
 		attributes: {
 			name: string;
-      hash: string;
-      ext: string;
-      alternativeText: string;
+			hash: string;
+			ext: string;
+			alternativeText: string;
 		};
 	};
+};
+
+type Tags = {
+	data: {
+		id: number;
+		attributes: {
+			name: string;
+		};
+	}[];
 };
 
 export type Bio = {
