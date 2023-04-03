@@ -11,10 +11,10 @@
 			<div class="widget rounded-[40px] p-6 text-center">
 				<a href="/blog/{post.attributes.slug}">
 					<figure class="mb-4 overflow-hidden rounded-[40px]">
-						{#await getIsomorphicImageSource({hash: post.attributes.thumbnail.data.attributes.hash, ext: post.attributes.thumbnail.data.attributes.ext}) then src}
+						{#await getIsomorphicImageSource( { hash: post.attributes.thumbnail.data.attributes.hash, ext: post.attributes.thumbnail.data.attributes.ext } ) then src}
 							<img
 								class="h-full w-full"
-								src={src}
+								{src}
 								alt={post.attributes.thumbnail.data.attributes.alternativeText}
 							/>
 						{/await}

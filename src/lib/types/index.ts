@@ -26,13 +26,20 @@ type Thumbnail = {
 	};
 };
 
-type Tags = {
-	data: {
-		id: number;
-		attributes: {
-			name: string;
+export type Tags = {
+	data: Tag[];
+};
+
+export type Tag = {
+	id: number;
+	attributes: {
+		name: string;
+		posts: {
+			data: {
+				id: number;
+			}[];
 		};
-	}[];
+	};
 };
 
 export type Bio = {

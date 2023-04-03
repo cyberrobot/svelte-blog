@@ -8,13 +8,14 @@ module.exports = {
 				body: ['Work sans', 'sans-serif']
 			},
 			colors: {
-				'btn-primary': '#FFCC01'
+				'btn-primary': '#FFCC01',
+				'theme-accent-1': '#F16363'
 			}
 		}
 	},
 	daisyui: {
 		logs: false,
-    prefix: '',
+		prefix: '',
 		themes: [
 			{
 				light: {

@@ -11,7 +11,6 @@
 	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
 	import Tags from '$lib/components/Tags/Tags.svelte';
 	export let data: PageData;
-	console.log('post.attributes.tags', data.post.attributes.tags);
 	$: post = data.post as Post;
 </script>
 
@@ -50,7 +49,7 @@
 				<TimeToRead content={post.attributes.content} />
 			</div>
 			<div class="mb-4">
-				<Tags tags={post.attributes.tags?.data.map((t) => t.attributes.name)} />
+				<Tags tags={post.attributes.tags.data} />
 			</div>
 			<div class="mb-10 rounded-lg bg-base-100 p-6">
 				{post.attributes.description}

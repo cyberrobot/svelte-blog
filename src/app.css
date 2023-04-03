@@ -4,8 +4,13 @@ html {
 	@apply font-body leading-6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-heading;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading;
 }
 
 .widget {
@@ -15,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 @tailwind components;
 
 .all-prose {
-	@apply prose-lg prose-img:rounded-lg prose-a:transition prose-a:text-primary hover:prose-a:text-primary-focus prose-headings:scroll-mt-16 prose-headings:font-medium prose;
+	@apply prose-lg prose prose-headings:scroll-mt-16 prose-headings:font-medium prose-a:text-primary prose-a:transition hover:prose-a:text-primary-focus prose-img:rounded-lg;
 }
 
 .btn {

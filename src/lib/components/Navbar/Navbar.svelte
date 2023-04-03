@@ -5,8 +5,7 @@
 <nav class={direction === 'horizontal' ? 'navbar' : ''}>
 	<ul class="menu {direction === 'horizontal' ? 'menu-horizontal' : ''} -mx-4">
 		<li><a href="/">Blog</a></li>
-		<li><a href="/work-with-me">Work with me</a></li>
-		<li><a href="/contact">Contact</a></li>
+		<li><a href="/tags">Tags</a></li>
 	</ul>
 </nav>
 
@@ -20,6 +19,6 @@
 	}
 	.navbar .menu li a:hover {
 		background: none;
-		color: #f16363;
+		@apply text-theme-accent-1;
 	}
 </style>
