@@ -34,9 +34,17 @@ export type Tag = {
 	id: number;
 	attributes: {
 		name: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
 		posts: {
 			data: {
 				id: number;
+				attributes: {
+					title: string;
+					slug: string;
+					description: string;
+				};
 			}[];
 		};
 	};
