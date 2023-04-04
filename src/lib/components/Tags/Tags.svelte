@@ -9,7 +9,7 @@
 		{#each tags as tag}
 			<Tag
 				name={tag.attributes.name}
-				url="tags/{tag.attributes.name}"
+				url="/tags/{tag.attributes.name}"
 				{...tag.attributes.posts && { posts: tag.attributes.posts.data }}
 			/>
 		{/each}
