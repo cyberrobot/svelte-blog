@@ -9,7 +9,9 @@ module.exports = {
 			},
 			colors: {
 				'btn-primary': '#FFCC01',
-				'theme-accent-1': '#F16363'
+				'theme-accent-1': '#F16363',
+				'theme-accent-2': '#5B390C',
+				'theme-accent-3': 'rgba(103,103,226)'
 			}
 		}
 	},

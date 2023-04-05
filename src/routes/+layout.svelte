@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div class="drawer">
+<div class="cogs-pattern drawer">
 	<input id="mobile-side-nav" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
 		<div class="container mx-auto px-4 lg:px-14" bind:this={container}>
