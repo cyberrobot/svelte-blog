@@ -14,14 +14,14 @@
 			<img
 				src="/images/avatar.png"
 				alt="avatar"
-				class="mx-auto max-w-[280px] md:max-w-sm xl:max-w-md 2xl:max-w-xl"
+				class="mx-auto max-w-[220px] md:max-w-sm xl:max-w-md 2xl:max-w-xl"
 			/>
 			<div
-				class="widget absolute bottom-0 right-0 flex w-52 items-center justify-center gap-1.5 rounded-full py-2 font-bold uppercase"
+				class="widget absolute bottom-0 right-0 flex w-40 items-center justify-center gap-1.5 rounded-full py-2 font-bold uppercase md:w-52"
 			>
-				<span class="text-4xl">{getYearsFromDate(new Date('2012-08-01'))}</span>
-				<span class="text-4xl text-theme-accent-1">+</span>
-				<div class="text-sm leading-3">
+				<span class="text-3xl md:text-4xl">{getYearsFromDate(new Date('2012-08-01'))}</span>
+				<span class="text-3xl text-theme-accent-1 md:text-4xl">+</span>
+				<div class="text-xs leading-3 md:text-sm md:leading-3">
 					<div>years of</div>
 					<div class="text-theme-accent-1">experience</div>
 				</div>
@@ -32,7 +32,7 @@
 				<span>Hello,</span>{' '}<span class="text-white">my name is</span>
 			</div>
 			<h1 class="flex flex-col font-heading font-bold">
-				<span class="text-4xl uppercase md:text-7xl xl:text-8xl 2xl:text-[110px]">Yaroslav</span>
+				<span class="text-5xl uppercase md:text-7xl xl:text-8xl 2xl:text-[110px]">Yaroslav</span>
 				<span class="text-4xl text-white lg:text-6xl">salmin</span>
 			</h1>
 			<p class="py-8 text-xl lg:max-w-[680px] lg:py-16 lg:leading-10">
