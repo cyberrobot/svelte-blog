@@ -1,3 +1,7 @@
+<script>
+	import { getYearsFromDate } from '$lib/utils/dates/getYearsFromDate';
+</script>
+
 <div class="bt-hero mb-8 flex items-center justify-center py-0">
 	<div class="flex w-[100%] flex-col items-center gap-10 lg:flex-row-reverse">
 		<div class="relative lg:w-[40%]">
@@ -9,7 +13,7 @@
 			<div
 				class="widget absolute bottom-0 right-0 flex w-52 items-center justify-center gap-1.5 rounded-full py-2 font-bold uppercase"
 			>
-				<span class="text-4xl">12</span>
+				<span class="text-4xl">{getYearsFromDate(new Date('2012-08-01'))}</span>
 				<span class="text-4xl text-theme-accent-1">+</span>
 				<div class="text-sm leading-3">
 					<div>years of</div>
