@@ -3,8 +3,11 @@
 	import type { Post } from '$lib/types';
 	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
 	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
+	import { MetaTags } from 'svelte-meta-tags';
 	export let data: PageData & { posts: Post[] };
 </script>
+
+<MetaTags title="Batdog Codes blog about web technology - Yaroslav Salmin" />
 
 <div class="mb-2 grid grid-cols-6 gap-14">
 	{#each data.posts as post}

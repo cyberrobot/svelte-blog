@@ -1,9 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { Tag } from '$lib/types';
+	import { MetaTags } from 'svelte-meta-tags';
 	export let data: PageData;
 	const { tag }: { tag: Tag } = data;
 </script>
+
+<MetaTags title="Posts for {tag.attributes.name} - Yaroslav Salmin" />
 
 <h1 class="mb-8 font-heading text-2xl font-extrabold text-black md:text-4xl">
 	Posts for {tag.attributes.name}

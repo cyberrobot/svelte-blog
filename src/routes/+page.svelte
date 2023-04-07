@@ -1,6 +1,12 @@
 <script>
 	import { getYearsFromDate } from '$lib/utils/dates/getYearsFromDate';
+	import { MetaTags } from 'svelte-meta-tags';
 </script>
+
+<MetaTags
+	title="Welcome to my place! - Yaroslav Salmin"
+	description="My blog about development, testing and deploying web applications."
+/>
 
 <div class="bt-hero mb-8 flex items-center justify-center py-0">
 	<div class="flex w-[100%] flex-col items-center gap-10 lg:flex-row-reverse">
