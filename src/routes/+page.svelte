@@ -1,41 +1,45 @@
-<script lang="ts">
-	import type { PageData } from './$types';
-	import type { Post } from '$lib/types';
-	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
-	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
-	export let data: PageData & { posts: Post[] };
-</script>
-
-<div class="mb-2 grid grid-cols-6 gap-14">
-	{#each data.posts as post}
-		<div class="col-span-6 md:col-span-3 lg:col-span-2">
-			<div class="widget rounded-[40px]">
-				<div class="polka-dots-pattern mb-4 rounded-t-[36px] bg-theme-accent-3 p-6">
-					<div class="logo mb-3 h-[26px] w-[140px]" />
-					<a href="/blog/{post.attributes.slug}" class="hover:animate-pulse">
-						<h3 class="font-heading text-2xl font-bold text-white md:text-2xl">
-							{post.attributes.title}
-						</h3>
-					</a>
-					<div class="mt-2">
-						<PublishedDate class="text-white" date={post.attributes.publishedAt} />
-						<span class="text-white">•</span>
-						<TimeToRead class="text-white" content={post.attributes.content} />
-					</div>
-				</div>
-				<div class="mb-4 px-6 text-lg">
-					{post.attributes.description}
-				</div>
-				<div class="mb-6 px-6 text-center">
-					<a href="/blog/{post.attributes.slug}" class="btn-primary btn-sm btn">Read more</a>
+<div class="bt-hero mb-8 flex items-center justify-center py-0">
+	<div class="flex w-[100%] flex-col items-center gap-10 lg:flex-row-reverse">
+		<div class="relative lg:w-[40%]">
+			<img
+				src="/images/avatar.png"
+				alt="avatar"
+				class="mx-auto max-w-[280px] md:max-w-sm xl:max-w-md 2xl:max-w-lg"
+			/>
+			<div
+				class="widget absolute bottom-0 right-0 flex w-52 items-center justify-center gap-1.5 rounded-full py-2 font-bold uppercase"
+			>
+				<span class="text-4xl">12</span>
+				<span class="text-4xl text-theme-accent-1">+</span>
+				<div class="text-sm leading-3">
+					<div>years of</div>
+					<div class="text-theme-accent-1">experience</div>
 				</div>
 			</div>
 		</div>
-	{/each}
+		<div class="lg:w-[60%]">
+			<div class="text-xl font-bold uppercase lg:text-3xl">
+				<span>Hello,</span>{' '}<span class="text-white">my name is</span>
+			</div>
+			<h1 class="flex flex-col font-heading font-bold">
+				<span class="text-4xl uppercase md:text-7xl xl:text-8xl 2xl:text-[110px]">Yaroslav</span>
+				<span class="text-4xl text-white lg:text-6xl">salmin</span>
+			</h1>
+			<p class="py-8 text-xl lg:max-w-[680px] lg:py-16 lg:leading-10">
+				I have bit-buckets of experience developing, testing, documenting and deploying data-rich,
+				visualisation and e-commerce platforms.
+			</p>
+			<a class="btn-primary btn lg:btn-lg" href="/cv-yaroslav-salmin.pdf" target="_blank"
+				>Download CV</a
+			>
+		</div>
+	</div>
 </div>
 
 <style>
-	.logo {
-		background: url('/images/logo.svg') no-repeat;
+	@media screen and (min-width: 1024px) {
+		.bt-hero {
+			height: calc(100vh - 272px);
+		}
 	}
 </style>

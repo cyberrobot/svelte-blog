@@ -4,7 +4,7 @@
 
 <nav class={direction === 'horizontal' ? 'navbar' : ''}>
 	<ul class="menu {direction === 'horizontal' ? 'menu-horizontal' : ''} -mx-4">
-		<li><a href="/">Blog</a></li>
+		<li><a href="/blog">Blog</a></li>
 		<li><a href="/tags">Tags</a></li>
 	</ul>
 </nav>
