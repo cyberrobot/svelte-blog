@@ -8,7 +8,7 @@
 			<img
 				src="/images/avatar.png"
 				alt="avatar"
-				class="mx-auto max-w-[280px] md:max-w-sm xl:max-w-md 2xl:max-w-lg"
+				class="mx-auto max-w-[280px] md:max-w-sm xl:max-w-md 2xl:max-w-xl"
 			/>
 			<div
 				class="widget absolute bottom-0 right-0 flex w-52 items-center justify-center gap-1.5 rounded-full py-2 font-bold uppercase"
