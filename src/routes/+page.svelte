@@ -10,7 +10,7 @@
 
 <div class="bt-hero mb-8 flex items-center justify-center py-0">
 	<div class="flex w-[100%] flex-col items-center gap-10 lg:flex-row-reverse">
-		<div class="relative lg:w-[40%]">
+		<div class="relative lg:w-[42%]">
 			<img
 				src="/images/avatar.png"
 				alt="avatar"
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="lg:w-[60%]">
+		<div class="lg:w-[58%]">
 			<div class="text-xl font-bold uppercase lg:text-3xl">
 				<span>Hello,</span>{' '}<span class="text-white">my name is</span>
 			</div>
