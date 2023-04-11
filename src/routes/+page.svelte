@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="lg:w-[58%]">
-			<div class="text-xl font-bold uppercase lg:text-3xl">
+			<div class="font-heading text-xl font-bold uppercase lg:text-3xl">
 				<span>Hello,</span>{' '}<span class="text-white">my name is</span>
 			</div>
 			<h1 class="flex flex-col font-heading font-bold">

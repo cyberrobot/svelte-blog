@@ -1,4 +1,9 @@
 <script lang="ts">
+	import '@fontsource/montserrat/600.css';
+	import '@fontsource/montserrat/700.css';
+	import '@fontsource/montserrat/900.css';
+	import '@fontsource/work-sans/400.css';
+	import '@fontsource/work-sans/900.css';
 	import '../app.css';
 	import '../prism.css';
 	import Footer from '$lib/components/Footer/Footer.svelte';
@@ -37,3 +42,12 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	:global(body) {
+		font-family: 'Work Sans', sans-serif;
+	}
+	:global(h1, h2, h3, h4, h5, h6) {
+		font-family: 'Montserrat', sans-serif;
+	}
+</style>
