@@ -20,7 +20,7 @@ h6 {
 @tailwind components;
 
 .all-prose {
-	@apply prose-lg prose prose-headings:scroll-mt-16 prose-headings:font-medium prose-a:text-primary prose-a:transition hover:prose-a:text-primary-focus prose-img:rounded-lg;
+	@apply prose-lg prose prose-headings:scroll-mt-16 prose-headings:font-medium prose-a:text-primary prose-a:transition hover:prose-a:text-primary-focus prose-blockquote:break-words prose-img:rounded-lg;
 }
 
 .btn {
