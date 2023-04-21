@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
 	import Aside from '$lib/components/Aside/Aside.svelte';
 	import type { Post } from '$lib/types';
@@ -10,8 +12,15 @@
 	import PublishedDate from '$lib/components/PublishedDate/PublishedDate.svelte';
 	import TimeToRead from '$lib/components/TimeToRead/TimeToRead.svelte';
 	import Tags from '$lib/components/Tags/Tags.svelte';
+	import ImageRenderer from '$lib/components/Renderers/Image/ImageRenderer.svelte';
 	export let data: PageData;
 	$: post = data.post as Post;
+
+	onMount(() => {
+		if (browser) {
+			document.lazyloadInstance.update();
+		}
+	});
 </script>
 
 <MetaTags title={post.attributes.title} description={post.attributes.description} />
@@ -57,7 +66,8 @@
 			<div class="mt-4">
 				<SvelteMarkdown
 					renderers={{
-						code: Code
+						code: Code,
+						image: ImageRenderer
 					}}
 					source={post.attributes.content}
 				/>

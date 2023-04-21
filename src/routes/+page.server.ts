@@ -1,3 +1,9 @@
+declare global {
+	interface Document {
+		lazyloadInstance: any;
+	}
+}
+
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { config } from '$lib/config';
