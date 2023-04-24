@@ -17,7 +17,7 @@
 	$: post = data.post as Post;
 
 	onMount(() => {
-		if (browser) {
+		if (browser && document.lazyloadInstance) {
 			document.lazyloadInstance.update();
 		}
 	});

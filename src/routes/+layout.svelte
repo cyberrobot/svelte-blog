@@ -11,19 +11,12 @@
 	import Logo from '$lib/components/Logo/Logo.svelte';
 	import Navbar from '$lib/components/Navbar/Navbar.svelte';
 	import { afterNavigate } from '$app/navigation';
-	import lazyload, { type ILazyLoadInstance } from 'vanilla-lazyload';
+	import lazyload from 'vanilla-lazyload';
 	import { browser } from '$app/environment';
 
 	if (browser && !document.lazyloadInstance) {
 		document.lazyloadInstance = new lazyload({
-			callback_error: (img: HTMLElement) => {
-				const href = img.getAttribute('data-src');
-				if (!href) return;
-				const parts = href?.split('/')?.pop()?.split('_');
-				if (!parts || parts.length < 2) return;
-				const fileName = `${parts.slice(1, -1).join('_')}_${parts.slice(-1)}`;
-				img.setAttribute('src', href.replace(parts.join('_') as string, fileName));
-			}
+			threshold: 500
 		});
 	}
 
